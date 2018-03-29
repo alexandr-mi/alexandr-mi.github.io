@@ -1,0 +1,176 @@
+@media screen and (max-width: 1124px) {
+  .hamburger-button {
+    display: block;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 15px;
+    display: none;
+  }
+  .nav__part {
+    background: #666666;
+    width: 100%;
+    border-top: none;
+    border-bottom: 1px solid #cecece;
+  }
+  .nav__part:hover, .nav__part.active {
+    border-top: none;
+    border-bottom: 2px solid #ffc06f;
+  }
+  .biography__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    position: relative;
+  }
+  .gallery__album {
+    width: 30%;
+  }
+  .sliders {
+    padding-top: 0;
+  }
+  .biography-page__hero {
+    margin: 0;
+  }
+  .contact__title {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .header__container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 70px;
+  }
+  .header .logo__header {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .header .logo__footer-decor {
+    width: 6px;
+    height: 6px;
+    background: #f6f5c5;
+  }
+  .header .logo__footer {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .logo__footer-text {
+    font-size: 12px;
+    color: #f6f5c5;
+  }
+  .biography-page-text {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact__name-contact {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  .contact__email-contact {
+    font-size: 18px;
+  }
+  .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .sliders__prev, .sliders__next {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .logo__header {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .logo__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .logo__footer-text {
+    font-size: 14px;
+  }
+  .logo__footer-decor {
+    width: 4px;
+    height: 4px;
+  }
+  .biography__photo {
+    width: 100%;
+  }
+  .biography__person {
+    width: 100%;
+  }
+  .biography-text__title-header, .biography-page-text__title-header {
+    font-size: 40px;
+  }
+  .biography-text__title-footer, .biography-page-text__title-footer {
+    font-size: 20px;
+  }
+  .biography-text__main, .biography-page-text__main {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+  .biography-text__cap-letter, .biography-page-text__cap-letter {
+    font-size: 31px;
+    color: #f6f5c5;
+  }
+  .biography-text__cap-letter-small, .biography-page-text__cap-letter-small {
+    font-size: 16px;
+  }
+  .biography-page-text__main {
+    line-height: 25px;
+  }
+  .title__text {
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+  .title__decor {
+    width: 12px;
+    height: 12px;
+  }
+  .gallery__albums {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gallery__album {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/*# sourceMappingURL=main_media.css.map */
