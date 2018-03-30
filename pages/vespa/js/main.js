@@ -5,8 +5,7 @@ var hero_text		= ".hero__facts li"
 
 
 
-
-$(document).ready( function () {
+window.addEventListener('load', function () {
 	addOpacity(1000);
 	addActive(300, 1000)
 	addActive(300, 7000)
@@ -20,15 +19,7 @@ $(document).ready( function () {
 	sr.reveal('.red__div', {viewFactor: 0.5, duration: 1000, delay: 0});
 	sr.reveal('.checkers__img', {viewFactor: 0.5, duration: 1000, delay: 0});
 	sr.reveal('.quote__text', {duration: 1000, delay: 0});
-
 });
-
-function heroAnimation(speedOpacity, speedActive, speedTimeout) {
-	addOpacity(speedOpacity)
-	setTimeout(function() {
-		addActive(speedActive)
-	}, speedTimeout)
-}
 
 function addOpacity(time) {
 	let i = 0
@@ -72,13 +63,3 @@ function addActive(interval, timeout) {
 		}, interval);
 	}, timeout)
 }
-
-
-
-function headerActive() {
-	$('header').scroll(function() {
-		alert('1')
-		/*$('.advantages').addClass( opacity )*/
-	})
-}
-
