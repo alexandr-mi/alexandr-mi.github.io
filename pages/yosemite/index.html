@@ -1,0 +1,60 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Yosemite</title>
+  <meta name="description" content="This is animation mountain">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rozha+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <!--[if lt IE 11]>
+  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="yosemite">
+    <div class="yosemite__background_back"></div>
+    <div class="yosemite__background_front"></div>
+    <!--img.yosemite__background_back(src='./images/backgrounds/backTEst.jpg')-->
+    <!--img.yosemite__background_front(src='./images/backgrounds/front.png')-->
+    <div class="yosemite__overlay"></div>
+    <div class="yosemite__top">
+      <div class="yosemite__top-title">
+        <svg viewbox="0 0 800 110" class="heading">
+          <defs>
+            <pattern id="textBg" patternunits="userSpaceOnUse" width="800" height="110">
+              <image xlink:href="./images/backgrounds/text.png" x="0" y="0" width="100" class="yosemite__top-bg"></image>
+            </pattern>
+          </defs>
+          <text text-anchor="middle" x="50%" y="50%" dy=".25em" fill="url(#textBg)" class="serifFont yosemite__top-title-text">YOSEMITE</text>
+        </svg>
+      </div>
+      <div class="yosemite__top-title-descryption">NATIONAL PARK</div>
+    </div>
+    <div class="yosemite__button yosemite__button-top active">
+      <div class="yosemite__button-icon fa fa-map-marker"></div>
+      <div class="yosemite__button-name yosemite__button-icon">GLACIER PEAK</div>
+    </div>
+    <div class="yosemite__bottom yosemite__container hide">
+      <div class="yosemite__bottom-title">
+        <div class="yosemite__bottom-title-name serifFont">Glacier Peak</div>
+        <div class="yosemite__bottom-title-coordinate">37º 43’ 50’’ N, 119º 34’ 25’’ W</div>
+      </div>
+      <div class="yosemite__bottom-text">
+        Glacier Point, an overlook with a commanding view of Yosemite Valley.
+        Half Dome, Yosemite’s high country, is accessible by car from
+        approximately late May through October or November. From mid-December
+        through March, cross-country skiers can experience this view after
+        skiing 10.6 miles.
+      </div>
+      <div class="yosemite__button yosemite__button-bottom">
+        <div class="yosemite__button-icon yosemite__button-icon fa fa-map-marker"></div>
+        <div class="yosemite__button-name yosemite__button-name">POINTS OF INTEREST</div>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/main.js"></script>
+</body></html>
