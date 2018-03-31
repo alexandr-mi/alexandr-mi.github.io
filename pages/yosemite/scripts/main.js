@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
       buttonBottom.classList.add('active');
       containerBottom.classList.remove('hide');
-    }, 1000);
+    }, 800);
   }
 
   function showTop() {

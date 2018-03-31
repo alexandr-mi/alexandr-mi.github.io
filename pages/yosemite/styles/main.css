@@ -464,8 +464,8 @@ template {
           transform: translate(-50%, 0%);
   width: 900px;
   text-align: center;
-  -webkit-transition: top 1s;
-  transition: top 1s;
+  -webkit-transition: top 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: top 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .yosemite__top-title-text {
@@ -487,8 +487,8 @@ template {
   y: 0;
   height: 120px;
   width: 100%;
-  -webkit-transition: y 1s;
-  transition: y 1s;
+  -webkit-transition: y 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: y 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .yosemite__top.hide {
@@ -548,7 +548,7 @@ template {
 }
 
 .yosemite__bottom.hide {
-  top: 100%;
+  top: 70%;
 }
 
 .yosemite__bottom.hide .yosemite__bottom-title-name {
@@ -600,8 +600,8 @@ template {
 
 .yosemite__button-bottom {
   margin-top: 10px;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   opacity: 0;
 }
 
@@ -617,6 +617,39 @@ template {
   text-align: center;
 }
 
+/*.yosemite__background {
+  position: relative;
+  &_back {
+    top: 0;
+    max-width: 2200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), top 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  &_back.zoom {
+    top: -380px;
+  }
+  &_front {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+    top: 50%;
+    max-width: 2000px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), top 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  &_front.zoom {
+    top: -10%;
+  }
+
+  &_front.zoom, &_back.zoom  {
+
+    left: 50%;
+    transform: scale(1.5) translate(-40%, 0);
+  }
+}*/
 .yosemite__background_back {
   position: absolute;
   top: 0;
@@ -641,8 +674,8 @@ template {
 }
 
 .yosemite__background_front, .yosemite__background_back {
-  -webkit-transition: background-position 1s, background-size 1s;
-  transition: background-position 1s, background-size 1s;
+  -webkit-transition: background-position 1s cubic-bezier(0.77, 0, 0.175, 1), background-size 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: background-position 1s cubic-bezier(0.77, 0, 0.175, 1), background-size 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .yosemite__background_back.zoom {
@@ -779,7 +812,8 @@ template {
   font-family: 'Rozha One', serif;
 }
 
-html, body {
+body {
+  position: relative;
   width: 100%;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
