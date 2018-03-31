@@ -617,46 +617,13 @@ template {
   text-align: center;
 }
 
-/*.yosemite__background {
-  position: relative;
-  &_back {
-    top: 0;
-    max-width: 2200px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), top 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-  &_back.zoom {
-    top: -380px;
-  }
-  &_front {
-    overflow-y: hidden;
-    overflow-x: hidden;
-    position: absolute;
-    top: 50%;
-    max-width: 2000px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), top 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-  &_front.zoom {
-    top: -10%;
-  }
-
-  &_front.zoom, &_back.zoom  {
-
-    left: 50%;
-    transform: scale(1.5) translate(-40%, 0);
-  }
-}*/
 .yosemite__background_back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/backgrounds/backTEst.jpg");
+  background-image: url("../images/backgrounds/back.jpg");
   background-position: 50% 0;
   background-repeat: no-repeat;
 }
