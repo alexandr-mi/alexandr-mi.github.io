@@ -449,11 +449,14 @@ template {
   display: none;
 }
 
+body {
+  background: #5d91f3;
+}
+
 .password {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #5d91f3;
 }
 
 .password__bg {
@@ -492,8 +495,8 @@ template {
 .password__bg-after.active {
   right: 0;
   top: 0;
-  width: 101%;
-  height: 101%;
+  width: 100%;
+  height: 100%;
   border-radius: 19px;
 }
 
@@ -621,6 +624,13 @@ template {
 .password__icon-eye-circle {
   fill: #565cc0;
   stroke: #565cc0;
+}
+
+@media all and (max-width: 660px) {
+  .password {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
 }
 
 *,

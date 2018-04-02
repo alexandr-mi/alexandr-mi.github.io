@@ -3,6 +3,32 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+var eye_button = document.querySelector('.password__icon-container-eye');
+var bg = document.querySelector('.password__bg');
+var bg_after = document.querySelector('.password__bg-after');
+var lock_icon = document.querySelector('.password__icon-lock');
+var eye_frames = document.querySelector('#eye').children;
+var password_input = document.querySelector('.password__input');
+
+function showPassword() {
+  setTimeout(function () {
+    password_input.type = 'text';
+  }, 200);
+  setTimeout(function () {
+    lock_icon.classList.toggle('active');
+  }, 300);
+  setTimeout(function () {
+    bg.style.background = 'white';
+  }, 500);
+}
+
+function hidePassword() {
+  bg.style.background = 'black';
+  setTimeout(function () {
+    lock_icon.classList.toggle('active');
+    password_input.type = 'password';
+  }, 50);
+}
 function animationEye(eye_frames, button) {
 
   button.dataset.in_process = 'true';
@@ -41,27 +67,15 @@ function animationEye(eye_frames, button) {
 };
 
 window.addEventListener('load', function () {
-  var eye_button = document.querySelector('.password__icon-container-eye');
-  var bg_after = document.querySelector('.password__bg-after');
-  var lock_icon = document.querySelector('.password__icon-lock');
-  var eye_frames = document.querySelector('#eye').children;
-  var password_input = document.querySelector('.password__input');
 
   eye_button.addEventListener('click', function (e) {
     if (e.currentTarget.dataset.in_process === 'false') {
       bg_after.classList.toggle('active');
+
       if (e.currentTarget.dataset.state === 'close') {
-        setTimeout(function () {
-          password_input.type = 'text';
-        }, 200);
-        setTimeout(function () {
-          lock_icon.classList.toggle('active');
-        }, 300);
+        showPassword();
       } else {
-        setTimeout(function () {
-          lock_icon.classList.toggle('active');
-          password_input.type = 'password';
-        }, 50);
+        hidePassword();
       }
 
       animationEye(eye_frames, eye_button);
