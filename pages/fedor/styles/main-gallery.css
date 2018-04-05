@@ -320,11 +320,8 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   margin: 0;
-}
-
-html {
   font-family: 'Ubuntu', sans-serif;
   color: #4a4e4c;
 }
