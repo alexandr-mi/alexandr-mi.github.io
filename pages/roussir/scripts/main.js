@@ -2,24 +2,28 @@
 'use strict';
 
 var scrollButton = document.querySelector('.button-more');
+var pageWrapper = document.querySelector('.pageWrapper');
 
 window.addEventListener('load', function () {
   scrollButton.addEventListener('click', function () {
-    var winHeight = window.innerHeight;
-
-    var i = window.scrollY;
-
-    var scrollToSea = setInterval(function () {
-      if (i >= winHeight * 1.2) {
-        clearInterval(scrollToSea);
-      }
-
-      console.log(i);
-      window.scrollTo(0, i);
-
-      i += 30;
-    }, 20);
+    pageWrapper.classList.add('toSea');
   });
+});
+
+window.addEventListener('mousewheel', function (e) {
+  e.deltaY > 0 ? pageWrapper.classList.add('toSea') : pageWrapper.classList.remove('toSea');
+});
+
+var touchStart = void 0,
+    touchEnd = void 0;
+
+window.addEventListener('touchstart', function (e) {
+  touchStart = e.changedTouches[0].screenY;
+});
+
+window.addEventListener('touchmove', function (e) {
+  touchEnd = e.changedTouches[0].screenY;
+  touchStart > touchEnd ? pageWrapper.classList.add('toSea') : pageWrapper.classList.remove('toSea');
 });
 
 },{}]},{},[1])
