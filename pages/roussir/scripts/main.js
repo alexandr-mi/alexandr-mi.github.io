@@ -3,17 +3,54 @@
 
 var scrollButton = document.querySelector('.button-more');
 var pageWrapper = document.querySelector('.pageWrapper');
+var seaContentLeft = document.querySelector('.sea__content-left');
+var seaContentCenter = document.querySelector('.sea__content-center');
+var seaContentRight = document.querySelector('.sea__content-right');
 
-window.addEventListener('load', function () {
-  scrollButton.addEventListener('click', function () {
-    pageWrapper.classList.add('toSea');
-  });
+function toggleScroll(condition) {
+  if (condition) {
+    scrollToSea();
+  } else {
+    scrollToMountain();
+  }
+}
+
+function scrollToSea() {
+  pageWrapper.classList.add('toSea');
+  showSeaContent();
+}
+function scrollToMountain() {
+  pageWrapper.classList.remove('toSea');
+  hideSeaContent();
+}
+
+function showSeaContent() {
+  setTimeout(function () {
+    seaContentLeft.classList.add('show');
+  }, 500);
+  setTimeout(function () {
+    seaContentCenter.classList.add('show');
+  }, 700);
+  setTimeout(function () {
+    seaContentRight.classList.add('show');
+  }, 900);
+}
+
+function hideSeaContent() {
+  seaContentLeft.classList.remove('show');
+  seaContentCenter.classList.remove('show');
+  seaContentRight.classList.remove('show');
+}
+
+scrollButton.addEventListener('click', function () {
+  scrollToSea();
 });
 
 window.addEventListener('mousewheel', function (e) {
-  e.deltaY > 0 ? pageWrapper.classList.add('toSea') : pageWrapper.classList.remove('toSea');
+  toggleScroll(e.deltaY > 0);
 });
 
+// for touch devices
 var touchStart = void 0,
     touchEnd = void 0;
 
@@ -23,7 +60,7 @@ window.addEventListener('touchstart', function (e) {
 
 window.addEventListener('touchmove', function (e) {
   touchEnd = e.changedTouches[0].screenY;
-  touchStart > touchEnd ? pageWrapper.classList.add('toSea') : pageWrapper.classList.remove('toSea');
+  toggleScroll(touchStart > touchEnd);
 });
 
 },{}]},{},[1])
