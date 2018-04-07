@@ -643,6 +643,72 @@ body {
   font-weight: 700;
 }
 
+.contact .contact__list-extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact__item-extra {
+  text-decoration: none;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 5px;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.contact__description {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.contact__description:hover {
+  color: #ffaa05;
+}
+
+.contact__description:active {
+  color: rgba(255, 170, 5, 0.3);
+}
+
+.contact__item-extra:hover {
+  background: #ffaa05;
+}
+
+.contact__item-extra:active {
+  background: rgba(255, 170, 5, 0.3);
+}
+
+.contact .contact__description-extra {
+  text-decoration: underline;
+}
+
+.contact__item-extra .icon {
+  margin: 0;
+}
+
 .svg-container {
   z-index: -1;
   height: 300px;
