@@ -1,0 +1,78 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Arch-slider</title>
+  <meta name="description" content="Slider animation architecture">
+  <script src="https://alexandr-mi.github.io/scripts/main-preload.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,70">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <!--[if lt IE 11]>
+  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="pageContainer">
+    <div class="left">
+      <div class="header">
+        <div class="header__container">
+          <div class="header__logo">Logo</div>
+          <div class="header__nav">
+            <div class="header__nav-button fa fa-bars"></div>
+            <div class="header__nav-list"></div>
+          </div>
+        </div>
+      </div>
+      <div class="basicDescription">
+        <div class="basicDescription__title">
+          <div class="basicDescription__title_name">Clearview</div>
+          <div class="basicDescription__title_description">Chalet</div>
+        </div>
+        <div class="basicDescription__about-it">Nestled on the edge of the Notta&shy;wasaga Bay in Ontario, Canada, is the lovely Clearview Chalet.<br>The stunning home was designed by AKB architect bureau.</div>
+      </div>
+      <div class="continueRead">
+        <div class="continueRead__button">Continue reading this article</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="slider">
+        <div style="background-image: url(&quot;./images/slider/1.jpg&quot;)" class="slider__item normalZoom"></div>
+        <div style="background-image: url(&quot;./images/slider/2.jpg&quot;)" class="slider__item"></div>
+        <div style="background-image: url(&quot;./images/slider/3.jpg&quot;)" class="slider__item"></div>
+        <div style="background-image: url(&quot;./images/slider/4.jpg&quot;)" class="slider__item"></div>
+      </div>
+      <div class="additionalDescription">
+        <div class="additionalDescription__item additionalDescription__item-category">
+          <div class="additionalDescription__item-name">Category</div>
+          <div class="additionalDescription__item-value">Architecture</div>
+        </div>
+        <div class="additionalDescription__item additionalDescription__item-photographyBy">
+          <div class="additionalDescription__item-name">Photography by</div>
+          <div class="additionalDescription__item-value">Shai Gil</div>
+        </div>
+        <div class="additionalDescription__item additionalDescription__item-writtenBy">
+          <div class="additionalDescription__item-name">Written by</div>
+          <div class="additionalDescription__item-value">Jillian Japka</div>
+        </div>
+        <div class="additionalDescription__item additionalDescription__item-publishedOn">
+          <div class="additionalDescription__item-name">Published on</div>
+          <div class="additionalDescription__item-value">9 november 2017</div>
+        </div>
+      </div>
+      <div class="counter">
+        <div class="counter__currentStep"></div>
+        <div class="counter__line"></div>
+        <div class="counter__allStep"></div>
+      </div>
+    </div>
+    <div class="control">
+      <div class="control__prev fa fa-angle-left"></div>
+      <div class="control__next fa fa-angle-right"></div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="./scripts/main.js"></script>
+</body></html>
