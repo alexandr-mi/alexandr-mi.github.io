@@ -608,7 +608,7 @@ body {
 }
 
 .contact__container {
-  padding-left: 60px;
+  padding-left: 75px;
 }
 
 .contact__item {
@@ -627,6 +627,10 @@ body {
   font-weight: 700;
 }
 
+.contact .contact__list {
+  position: relative;
+}
+
 .contact .contact__list-extra {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -639,6 +643,8 @@ body {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .contact__item-extra {
@@ -654,7 +660,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80px;
+  width: 75px;
   padding: 10px 0;
   text-align: center;
   cursor: pointer;
@@ -691,6 +697,41 @@ body {
 
 .contact__item-extra .icon {
   margin: 0;
+}
+
+.contact__item-extra:before {
+  color: white;
+  position: absolute;
+  top: 62px;
+  left: -webkit-calc(50% - 75px);
+  left: calc(50% - 75px);
+  width: 150px;
+  text-align: center;
+  background-color: #181818;
+  display: none;
+}
+
+.contact__item-extra_location:before {
+  content: 'Minsk/Orsha Belarus';
+}
+
+.contact__item-extra_email:before {
+  content: 'alexandr-mi@inbox.ru';
+}
+
+.contact__item-extra_phone:before {
+  content: '+375(25) 604-56-90';
+}
+
+.contact__item-extra_location:hover:before,
+.contact__item-extra_email:hover:before,
+.contact__item-extra_phone:hover:before {
+  display: block;
+  background-color: #181818;
+}
+
+.contact__item-extra_phone:before:hover {
+  background: red;
 }
 
 .svg-container {

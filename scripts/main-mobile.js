@@ -39,8 +39,6 @@ function startFunctionAnimationOnVisibleObject(object, functionAnimation, param,
     var winHeight = window.innerHeight;
     var winScrollY = window.scrollY;
 
-    console.log(winHeight, winScrollY);
-
     var _object = object;
     var containerOffsetTop = _object.offsetTop;
     var containerHeight = _object.getBoundingClientRect().height;
