@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./styles/main-preloader.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="./styles/main-popup.css">
 </head>
 <body>
@@ -30,11 +31,14 @@
   </div>
   <div class="hero">
     <div class="hero__container">
-        <div class="hero__carousel"><img src="images/carouselImg/01.jpg" class="hero__img"><img src="images/carouselImg/02.jpg" class="hero__img"><img src="images/carouselImg/03.jpg" class="hero__img"><img src="images/carouselImg/04.jpg" class="hero__img"><img src="images/carouselImg/05.jpg" class="hero__img"><img src="images/carouselImg/06.jpg" class="hero__img">
-        </div>
-      <div class="hero__timeLine"></div>
-      <div class="hero__btn hero__btn_prev"><i aria-hidden="true" class="fa fa-chevron-left"></i></div>
-      <div class="hero__btn hero__btn_next"><i aria-hidden="true" class="fa fa-chevron-right"></i></div><a href="#galery" data-scroll="true" class="hero__mouse-slide"><img src="images/elements/icon-mouse.png"></a>
+        <div class="hero__carousel">
+          <div style="background-image: url(&quot;images/carouselImg/01.jpg&quot;)" class="hero__img"></div>
+          <div style="background-image: url(&quot;images/carouselImg/02.jpg&quot;)" class="hero__img"></div>
+          <div style="background-image: url(&quot;images/carouselImg/03.jpg&quot;)" class="hero__img"></div>
+          <div style="background-image: url(&quot;images/carouselImg/04.jpg&quot;)" class="hero__img"></div>
+          <div style="background-image: url(&quot;images/carouselImg/05.jpg&quot;)" class="hero__img"></div>
+          <div style="background-image: url(&quot;images/carouselImg/06.jpg&quot;)" class="hero__img"></div>
+        </div><a href="#galery" data-scroll="true" class="hero__mouse-slide"><img src="images/elements/icon-mouse.png"></a>
     </div>
   </div>
   <div id="galery" class="gallery">
@@ -170,10 +174,11 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="./scripts/main-popup.js"></script>
   <script src="./scripts/main-preloader.js"></script>
   <script src="./scripts/main-gMenu.js"></script>
   <script src="./scripts/main-scroll.js"></script>
-  <script src="./scripts/main-slider.js"></script>
   <script src="./scripts/main-upBtn.js"></script>
+  <script src="./scripts/main.js"></script>
 </body></html>

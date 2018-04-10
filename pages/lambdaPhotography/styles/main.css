@@ -733,68 +733,23 @@ a:active {
   width: 100%;
 }
 
-.hero__img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  min-width: 100%;
-  display: none;
-}
-
-.hero__img:first-child {
-  display: block;
-}
-
-.hero__btn {
-  display: block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  text-align: center;
-}
-
-.hero__btn:hover {
-  background-color: black;
-}
-
-.hero__btn_prev {
-  left: 30px;
-}
-
-.hero__btn_prev i {
-  margin-left: -5px;
-}
-
-.hero__btn_next {
-  right: 30px;
-}
-
-.hero__btn_next i {
-  margin-right: -5px;
-}
-
-.hero__timeLine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: white;
-  -webkit-transition: 3s;
-  transition: 3s;
-}
-
-.hero__timeLine.itActive {
+.hero__container {
   width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero__carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100vh !important;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .gallery__items {
