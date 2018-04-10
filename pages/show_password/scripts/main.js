@@ -11,6 +11,7 @@ var eye_frames = document.querySelector('#eye').children;
 var password_input = document.querySelector('.password__input');
 
 function showPassword() {
+  bg_after.classList.add('active');
   setTimeout(function () {
     password_input.type = 'text';
   }, 200);
@@ -19,11 +20,12 @@ function showPassword() {
   }, 300);
   setTimeout(function () {
     bg.style.background = 'white';
-  }, 500);
+  }, 450);
 }
 
 function hidePassword() {
   bg.style.background = 'black';
+  bg_after.classList.remove('active');
   setTimeout(function () {
     lock_icon.classList.toggle('active');
     password_input.type = 'password';
@@ -70,7 +72,6 @@ window.addEventListener('load', function () {
 
   eye_button.addEventListener('click', function (e) {
     if (e.currentTarget.dataset.in_process === 'false') {
-      bg_after.classList.toggle('active');
 
       if (e.currentTarget.dataset.state === 'close') {
         showPassword();

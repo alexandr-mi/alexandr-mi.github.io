@@ -291,6 +291,7 @@
 
 body {
   width: 100%;
+  overflow: hidden;
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
   color: #4a4e4c;
