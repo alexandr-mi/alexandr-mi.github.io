@@ -2,17 +2,6 @@
 var body = document.querySelector('body');
 var html = document.querySelector('html');
 
-function addOverflowForPreloader() {
-  body.style.overflow = 'hidden';
-  html.style.overflow = 'hidden';
-}
-
-function removeOverflowForPreloader() {
-  body.style.overflow = 'auto';
-  html.style.overflow = 'auto';
-}
-
-addOverflowForPreloader();
 window.onload = function (ev) {
 
   $(".hamburger-button").click(function() {
@@ -44,10 +33,6 @@ window.onload = function (ev) {
       $upBtn.removeClass('active');
     }
   });
-
-  var $preloader = $('.preloader');
-  $preloader.detach();
-  removeOverflowForPreloader();
 };
 
 
