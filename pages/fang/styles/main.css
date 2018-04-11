@@ -536,6 +536,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  overflow: hidden;
+}
+
+.container-nav {
+  overflow: visible;
 }
 
 .section {
