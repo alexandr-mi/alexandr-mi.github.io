@@ -7,7 +7,7 @@
  */
 /* Document
    ========================================================================== */
-@import url("https://fonts.googleapis.com/css?family=Gothic+A1:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Gothic+A1:400,600,700");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
 html {
   font-family: sans-serif;
@@ -693,9 +693,19 @@ body {
   display: none;
 }
 
-.navigation__btn-img {
+.navigation__btn-svg.open {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.navigation__btn-svg {
   width: 30px;
   padding: 10px 0;
+  fill: black;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .bamboo__text-container {
@@ -1022,7 +1032,7 @@ body {
             align-items: flex-start;
     display: none;
   }
-  .navigation__list-container.active {
+  .navigation__list-container.open {
     display: block;
   }
   .navigation__btn {

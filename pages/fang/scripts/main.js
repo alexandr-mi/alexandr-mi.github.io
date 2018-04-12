@@ -2,13 +2,13 @@
 'use strict';
 
 var navBtn = document.querySelector('.navigation__btn');
+var navBtnSvg = document.querySelector('.navigation__btn-svg');
 var nav = document.querySelector('.navigation__list-container');
 
 navBtn.addEventListener('click', function () {
-  nav.classList.toggle('active');
+  nav.classList.toggle('open');
+  navBtnSvg.classList.toggle('open');
 });
-
-window.addEventListener('load', function () {});
 
 },{}]},{},[1])
 
