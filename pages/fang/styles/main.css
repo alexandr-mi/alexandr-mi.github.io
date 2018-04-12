@@ -734,6 +734,27 @@ body {
   font-size: 48px;
 }
 
+@media screen and (max-width: 1000px) {
+  .bamboo__text-img.img.textMedium {
+    font-size: 25px;
+  }
+  .bamboo__text-img.img.textBig {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .bamboo__text {
+    max-width: 90%;
+  }
+  .bamboo__text-img.img.textMedium {
+    font-size: 20px;
+  }
+  .bamboo__text-img.img.textBig {
+    font-size: 35px;
+  }
+}
+
 .alan__container-text {
   background-color: #fff;
 }
@@ -752,6 +773,18 @@ body {
 .sprout .photosPhrase__text-container {
   background-position: 0% 70%;
   background-size: 120%;
+}
+
+@media screen and (max-width: 770px) {
+  .sprout .photosPhrase__text-container {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .sprout .img.textBig {
+    font-size: 30px;
+  }
 }
 
 .candle .photosPhrase__text {
