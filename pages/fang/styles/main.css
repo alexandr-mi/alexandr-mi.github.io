@@ -698,7 +698,17 @@ body {
           transform: rotate(180deg);
 }
 
+.navigation__btn:hover .navigation__btn-svg {
+  -webkit-animation-name: buttonJumping;
+          animation-name: buttonJumping;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
 .navigation__btn-svg {
+  position: relative;
   width: 30px;
   padding: 10px 0;
   fill: black;
@@ -706,6 +716,30 @@ body {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+@-webkit-keyframes buttonJumping {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes buttonJumping {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10%;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 .bamboo__text-container {
