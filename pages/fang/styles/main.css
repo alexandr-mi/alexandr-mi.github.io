@@ -7,7 +7,7 @@
  */
 /* Document
    ========================================================================== */
-@import url("https://fonts.googleapis.com/css?family=Gothic+A1:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Gothic+A1:400,500,600,700,900");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
 html {
   font-family: sans-serif;
@@ -464,9 +464,10 @@ template {
 }
 
 p {
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 0;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .container_text {
@@ -474,12 +475,15 @@ p {
 }
 
 .textTitle {
-  font-size: 20px;
+  font-size: 24px;
   color: #2e2e2f;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-top: 0;
 }
 
 .textTitleMedium {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 30px;
@@ -747,12 +751,21 @@ body {
   height: 600px;
   background-image: url(../images/bg/bambo.jpg);
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 0 100%;
   background-size: cover;
 }
 
 .bamboo__text {
-  max-width: 800px;
+  max-width: 75%;
+}
+
+.bamboo__text-img.img.textMedium {
+  font-size: 29px;
+  line-height: 1.3;
+}
+
+.bamboo__text-img.img.textBig {
+  font-size: 48px;
 }
 
 .alan__container-text {
@@ -761,9 +774,22 @@ body {
 
 .alan__img {
   float: right;
-  width: 300px;
+  width: 35%;
   margin-left: 40px;
   margin-bottom: 40px;
+}
+
+.sprout {
+  color: #000 !important;
+}
+
+.sprout .photosPhrase__text-container {
+  background-position: 0% 70%;
+  background-size: 120%;
+}
+
+.candle .photosPhrase__text {
+  top: 33%;
 }
 
 .photosPhrase__text-container {
@@ -804,7 +830,7 @@ body {
 
 .quotes__text {
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   text-align: center;
 }
@@ -904,7 +930,7 @@ body {
 .bonuses__card-main {
   background-color: white;
   text-align: center;
-  height: 400px;
+  height: 410px;
   padding: 10px;
   font-weight: 500;
 }
@@ -959,6 +985,28 @@ body {
   margin-bottom: 10px;
 }
 
+.bonuses__title {
+  padding-top: 30px;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.bonuses__title-description {
+  padding: 0;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.aboutUs__container {
+  padding: 40px 0 0;
+}
+
 .buyBtn__container {
   width: 100%;
 }
@@ -979,31 +1027,12 @@ body {
   margin-bottom: 30px;
   height: 80px;
   width: 460px;
-  padding-top: 2px;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffc15f), to(#ff9f62));
   background: -webkit-linear-gradient(top, #ffc15f, #ff9f62);
   background: linear-gradient(top, #ffc15f, #ff9f62);
   border: 1px solid #faf139;
   border-radius: 50px;
-}
-
-.bonuses__title {
-  padding-top: 30px;
-  font-size: 45px;
-  color: white;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.bonuses__title-description {
-  padding: 0;
-  font-size: 30px;
-  text-align: center;
-  color: white;
-  margin-top: 0;
-  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1080px) {
