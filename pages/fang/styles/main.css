@@ -694,12 +694,8 @@ body {
 }
 
 .navigation__btn-img {
-  margin: 0 auto;
   width: 30px;
   padding: 10px 0;
-  position: relative;
-  left: -webkit-calc(50% - 15px);
-  left: calc(50% - 15px);
 }
 
 .bamboo__text-container {
