@@ -7,7 +7,6 @@
  */
 /* Document
    ========================================================================== */
-@import "http://fonts.fontstorage.com/import/bebasneue.css";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -473,6 +472,12 @@ template {
 /*
 	Bebas Neue, 100, 200, 300, 400, 700
 */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url("../fonts/BebasNeue Bold.otf") format("opentype"), url("../fonts/BebasNeue Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
 body {
   font-family: Bebas Neue, Arial, Helvetica, "Lucida Sans Unicode", "Lucida Grande", Verdana, sans-serif;
 }
@@ -481,6 +486,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   margin: 0;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6, p, span {
