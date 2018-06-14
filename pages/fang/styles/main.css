@@ -9,6 +9,7 @@
    ========================================================================== */
 @import url("https://fonts.googleapis.com/css?family=Gothic+A1:400,500,600,700,900");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -1455,28 +1456,107 @@ img.mfp-img {
   font-weight: 500;
 }
 
-.price {
-  background-color: white;
+.price__list {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .price__item {
-  text-align: center;
+  font-family: Calibri, 'Lato', sans-serif;
+  width: 32%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
 }
 
-.price__item-description {
-  margin-bottom: 10px;
+.price__item .price__item_card {
+  width: 100%;
+  padding: 25px;
+  background-color: #d62602;
+  border: 1px solid #325b86;
+  border-radius: 50px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.price__item .price__item-title {
   font-size: 20px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 6px;
+}
+
+.price__item p, .price__item li {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.price__item ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+.price__item ul {
+  list-style-type: disc;
+}
+
+.price__item strong {
+  font-weight: 900;
+}
+
+.price__item .small-caps {
+  font-variant: small-caps;
+}
+
+.price__item .price__btn_pay {
+  font-variant: small-caps;
+  padding: 8px 30px 10px;
+  font-size: 20px;
+  background-color: #d62602;
+  border: 1px solid #325b86;
+  border-radius: 8px;
+  color: white;
   font-weight: 700;
 }
 
-.price__item-main {
-  font-size: 30px;
-  font-weight: 700;
-  color: #e29c62;
+@media screen and (max-width: 930px) {
+  .price__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .price__item {
+    width: 60%;
+  }
 }
 
-.price__item-main_no-marg {
-  margin-bottom: 10px;
+@media screen and (max-width: 570px) {
+  .price__item {
+    width: 90%;
+  }
 }
 
 .bonuses__title {
