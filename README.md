@@ -40,5 +40,5 @@ So when you boot up your site and go to `/about` you will see your new page.
 You can also create a new page that extends from a different layout file than `base.{jade,nunjucks}`.
 
 ```
-yo yeogurt:page about --layout=two-col
+yo yeogurt:page about --layout=two-col-Eros-consectetur
 ```
