@@ -818,13 +818,16 @@
                 </div>
               </div>
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <!-- Documentation for input fields:-->
+                <!-- https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/-->
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="business" value="example@mail.com">
-                <input type="hidden" name="lc" value="GB">
-                <input type="hidden" name="item_name" value="Feng Shui Masters course. Option One">
-                <input type="hidden" name="amount" value="1570.00">
-                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="item_name" value="BUY SEVEN STEPS to FENG SHUI MASTERY ON DVD">
+                <input type="hidden" name="item_number" value="FSI-7steps">
                 <input type="hidden" name="button_subtype" value="products">
+                <input type="hidden" name="lc" value="GB">
+                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="amount" value="1570.00">
                 <input type="hidden" name="no_note" value="0">
                 <input type="hidden" name="add" value="1">
                 <input type="submit" value="Add to cart" class="price__btn_pay">
@@ -835,7 +838,7 @@
                 <h3 class="price__item-title small-caps">Option TWO</h3>
                 <div class="price__item-text">
                   <p>Try the<strong> key Concepts Course first</strong> by taking</p>
-                  <p><strong>Option Three</strong>then take steps 2 – 7</p>
+                  <p><strong>Option Three</strong> then take steps 2 – 7</p>
                   <ol>
                     <li>2 Dowsing & Earth Acupuncture module</li>
                     <li>3 Nine Star Ki Astrology module</li>
@@ -859,11 +862,12 @@
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="business" value="example@mail.com">
-                <input type="hidden" name="lc" value="GB">
-                <input type="hidden" name="item_name" value="Feng Shui Masters course. Option Two.">
-                <input type="hidden" name="amount" value="1480.00">
-                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="item_name" value="BUY STEPS 2 - 7 DVD">
+                <input type="hidden" name="item_number" value="FSI-Steps 2-7">
                 <input type="hidden" name="button_subtype" value="products">
+                <input type="hidden" name="lc" value="GB">
+                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="amount" value="1480.00">
                 <input type="hidden" name="no_note" value="0">
                 <input type="hidden" name="add" value="1">
                 <input type="submit" value="Add to cart" class="price__btn_pay">
@@ -889,11 +893,12 @@
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="business" value="example@mail.com">
-                <input type="hidden" name="lc" value="GB">
-                <input type="hidden" name="item_name" value="Feng Shui Masters course. Option Three.">
-                <input type="hidden" name="amount" value="94.00">
-                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="item_name" value="ACCREDITED KEY CONCEPTS COURSE - DOWNLOAD OPTION">
+                <input type="hidden" name="item_number" value="FSIKCC-DL">
                 <input type="hidden" name="button_subtype" value="products">
+                <input type="hidden" name="lc" value="GB">
+                <input type="hidden" name="currency_code" value="GBP">
+                <input type="hidden" name="amount" value="94.00">
                 <input type="hidden" name="no_note" value="0">
                 <input type="hidden" name="add" value="1">
                 <input type="submit" value="Add to cart" class="price__btn_pay">
