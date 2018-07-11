@@ -432,15 +432,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var title_animation = document.querySelector('.hero__lookbook-desktop');
 
-new _Sprite_animation2.default({
-  container: title_animation,
-  img: './images/sprite/sprite-lookbook.png',
-  img_width: 1614,
-  img_height: 16800,
-  col: 2,
-  row: 42,
-  scale: 1,
-  speed: 35
+window.addEventListener('load', function () {
+  new _Sprite_animation2.default({
+    container: title_animation,
+    img: './images/sprite/sprite-lookbook.png',
+    img_width: 1614,
+    img_height: 16800,
+    col: 2,
+    row: 42,
+    scale: 1,
+    speed: 35
+  });
 });
 
 },{"./Gradient":2,"./Sprite_animation":3}]},{},[4])
