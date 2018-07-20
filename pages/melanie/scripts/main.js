@@ -8005,6 +8005,174 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{}],2:[function(require,module,exports){
+/*
+ * jQuery Easing v1.4.1 - http://gsgd.co.uk/sandbox/jquery/easing/
+ * Open source under the BSD License.
+ * Copyright © 2008 George McGinley Smith
+ * All rights reserved.
+ * https://raw.github.com/gdsmith/jquery-easing/master/LICENSE
+*/
+
+(function (factory) {
+	if (typeof define === "function" && define.amd) {
+		define(['jquery'], function ($) {
+			return factory($);
+		});
+	} else if (typeof module === "object" && typeof module.exports === "object") {
+		exports = factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
+})(function($){
+
+// Preserve the original jQuery "swing" easing as "jswing"
+$.easing.jswing = $.easing.swing;
+
+var pow = Math.pow,
+	sqrt = Math.sqrt,
+	sin = Math.sin,
+	cos = Math.cos,
+	PI = Math.PI,
+	c1 = 1.70158,
+	c2 = c1 * 1.525,
+	c3 = c1 + 1,
+	c4 = ( 2 * PI ) / 3,
+	c5 = ( 2 * PI ) / 4.5;
+
+// x is the fraction of animation progress, in the range 0..1
+function bounceOut(x) {
+	var n1 = 7.5625,
+		d1 = 2.75;
+	if ( x < 1/d1 ) {
+		return n1*x*x;
+	} else if ( x < 2/d1 ) {
+		return n1*(x-=(1.5/d1))*x + 0.75;
+	} else if ( x < 2.5/d1 ) {
+		return n1*(x-=(2.25/d1))*x + 0.9375;
+	} else {
+		return n1*(x-=(2.625/d1))*x + 0.984375;
+	}
+}
+
+$.extend( $.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x) {
+		return $.easing[$.easing.def](x);
+	},
+	easeInQuad: function (x) {
+		return x * x;
+	},
+	easeOutQuad: function (x) {
+		return 1 - ( 1 - x ) * ( 1 - x );
+	},
+	easeInOutQuad: function (x) {
+		return x < 0.5 ?
+			2 * x * x :
+			1 - pow( -2 * x + 2, 2 ) / 2;
+	},
+	easeInCubic: function (x) {
+		return x * x * x;
+	},
+	easeOutCubic: function (x) {
+		return 1 - pow( 1 - x, 3 );
+	},
+	easeInOutCubic: function (x) {
+		return x < 0.5 ?
+			4 * x * x * x :
+			1 - pow( -2 * x + 2, 3 ) / 2;
+	},
+	easeInQuart: function (x) {
+		return x * x * x * x;
+	},
+	easeOutQuart: function (x) {
+		return 1 - pow( 1 - x, 4 );
+	},
+	easeInOutQuart: function (x) {
+		return x < 0.5 ?
+			8 * x * x * x * x :
+			1 - pow( -2 * x + 2, 4 ) / 2;
+	},
+	easeInQuint: function (x) {
+		return x * x * x * x * x;
+	},
+	easeOutQuint: function (x) {
+		return 1 - pow( 1 - x, 5 );
+	},
+	easeInOutQuint: function (x) {
+		return x < 0.5 ?
+			16 * x * x * x * x * x :
+			1 - pow( -2 * x + 2, 5 ) / 2;
+	},
+	easeInSine: function (x) {
+		return 1 - cos( x * PI/2 );
+	},
+	easeOutSine: function (x) {
+		return sin( x * PI/2 );
+	},
+	easeInOutSine: function (x) {
+		return -( cos( PI * x ) - 1 ) / 2;
+	},
+	easeInExpo: function (x) {
+		return x === 0 ? 0 : pow( 2, 10 * x - 10 );
+	},
+	easeOutExpo: function (x) {
+		return x === 1 ? 1 : 1 - pow( 2, -10 * x );
+	},
+	easeInOutExpo: function (x) {
+		return x === 0 ? 0 : x === 1 ? 1 : x < 0.5 ?
+			pow( 2, 20 * x - 10 ) / 2 :
+			( 2 - pow( 2, -20 * x + 10 ) ) / 2;
+	},
+	easeInCirc: function (x) {
+		return 1 - sqrt( 1 - pow( x, 2 ) );
+	},
+	easeOutCirc: function (x) {
+		return sqrt( 1 - pow( x - 1, 2 ) );
+	},
+	easeInOutCirc: function (x) {
+		return x < 0.5 ?
+			( 1 - sqrt( 1 - pow( 2 * x, 2 ) ) ) / 2 :
+			( sqrt( 1 - pow( -2 * x + 2, 2 ) ) + 1 ) / 2;
+	},
+	easeInElastic: function (x) {
+		return x === 0 ? 0 : x === 1 ? 1 :
+			-pow( 2, 10 * x - 10 ) * sin( ( x * 10 - 10.75 ) * c4 );
+	},
+	easeOutElastic: function (x) {
+		return x === 0 ? 0 : x === 1 ? 1 :
+			pow( 2, -10 * x ) * sin( ( x * 10 - 0.75 ) * c4 ) + 1;
+	},
+	easeInOutElastic: function (x) {
+		return x === 0 ? 0 : x === 1 ? 1 : x < 0.5 ?
+			-( pow( 2, 20 * x - 10 ) * sin( ( 20 * x - 11.125 ) * c5 )) / 2 :
+			pow( 2, -20 * x + 10 ) * sin( ( 20 * x - 11.125 ) * c5 ) / 2 + 1;
+	},
+	easeInBack: function (x) {
+		return c3 * x * x * x - c1 * x * x;
+	},
+	easeOutBack: function (x) {
+		return 1 + c3 * pow( x - 1, 3 ) + c1 * pow( x - 1, 2 );
+	},
+	easeInOutBack: function (x) {
+		return x < 0.5 ?
+			( pow( 2 * x, 2 ) * ( ( c2 + 1 ) * 2 * x - c2 ) ) / 2 :
+			( pow( 2 * x - 2, 2 ) *( ( c2 + 1 ) * ( x * 2 - 2 ) + c2 ) + 2 ) / 2;
+	},
+	easeInBounce: function (x) {
+		return 1 - bounceOut( 1 - x );
+	},
+	easeOutBounce: bounceOut,
+	easeInOutBounce: function (x) {
+		return x < 0.5 ?
+			( 1 - bounceOut( 1 - 2 * x ) ) / 2 :
+			( 1 + bounceOut( 2 * x - 1 ) ) / 2;
+	}
+});
+
+});
+
+},{"jquery":3}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.1.1
  * https://jquery.com/
@@ -18226,7 +18394,316 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
+
+// ------------------------------------------
+// Rellax.js
+// Buttery smooth parallax library
+// Copyright (c) 2016 Moe Amaya (@moeamaya)
+// MIT license
+//
+// Thanks to Paraxify.js and Jaime Cabllero
+// for parallax concepts
+// ------------------------------------------
+
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    // Browser globals (root is window)
+    root.Rellax = factory();
+  }
+}(this, function () {
+  var Rellax = function(el, options){
+    "use strict";
+
+    var self = Object.create(Rellax.prototype);
+
+    var posY = 0;
+    var screenY = 0;
+    var posX = 0;
+    var screenX = 0;
+    var blocks = [];
+    var pause = true;
+
+    // check what requestAnimationFrame to use, and if
+    // it's not supported, use the onscroll event
+    var loop = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      function(callback){ setTimeout(callback, 1000 / 60); };
+
+    // check which transform property to use
+    var transformProp = window.transformProp || (function(){
+        var testEl = document.createElement('div');
+        if (testEl.style.transform === null) {
+          var vendors = ['Webkit', 'Moz', 'ms'];
+          for (var vendor in vendors) {
+            if (testEl.style[ vendors[vendor] + 'Transform' ] !== undefined) {
+              return vendors[vendor] + 'Transform';
+            }
+          }
+        }
+        return 'transform';
+      })();
+
+    // Default Settings
+    self.options = {
+      speed: -2,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false,
+      callback: function() {},
+    };
+
+    // User defined options (might have more in the future)
+    if (options){
+      Object.keys(options).forEach(function(key){
+        self.options[key] = options[key];
+      });
+    }
+
+    // By default, rellax class
+    if (!el) {
+      el = '.rellax';
+    }
+
+    // check if el is a className or a node
+    var elements = typeof el === 'string' ? document.querySelectorAll(el) : [el];
+
+    // Now query selector
+    if (elements.length > 0) {
+      self.elems = elements;
+    }
+
+    // The elements don't exist
+    else {
+      throw new Error("The elements you're trying to select don't exist.");
+    }
+
+    // Has a wrapper and it exists
+    if (self.options.wrapper) {
+      if (!self.options.wrapper.nodeType) {
+        var wrapper = document.querySelector(self.options.wrapper);
+
+        if (wrapper) {
+          self.options.wrapper = wrapper;
+        } else {
+          throw new Error("The wrapper you're trying to use don't exist.");
+        }
+      }
+    }
+
+
+    // Get and cache initial position of all elements
+    var cacheBlocks = function() {
+      for (var i = 0; i < self.elems.length; i++){
+        var block = createBlock(self.elems[i]);
+        blocks.push(block);
+      }
+    };
+
+
+    // Let's kick this script off
+    // Build array for cached element values
+    var init = function() {
+      for (var i = 0; i < blocks.length; i++){
+        self.elems[i].style.cssText = blocks[i].style;
+      }
+
+      blocks = [];
+
+      screenY = window.innerHeight;
+      screenX = window.innerWidth;
+      setPosition();
+
+      cacheBlocks();
+
+      // If paused, unpause and set listener for window resizing events
+      if (pause) {
+        window.addEventListener('resize', init);
+        pause = false;
+      }
+      animate();
+    };
+
+    // We want to cache the parallax blocks'
+    // values: base, top, height, speed
+    // el: is dom object, return: el cache values
+    var createBlock = function(el) {
+      var dataPercentage = el.getAttribute( 'data-rellax-percentage' );
+      var dataSpeed = el.getAttribute( 'data-rellax-speed' );
+      var dataZindex = el.getAttribute( 'data-rellax-zindex' ) || 0;
+
+      // initializing at scrollY = 0 (top of browser), scrollX = 0 (left of browser)
+      // ensures elements are positioned based on HTML layout.
+      //
+      // If the element has the percentage attribute, the posY and posX needs to be
+      // the current scroll position's value, so that the elements are still positioned based on HTML layout
+      var wrapperPosY = self.options.wrapper ? self.options.wrapper.scrollTop : (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
+      var posY = self.options.vertical ? ( dataPercentage || self.options.center ? wrapperPosY : 0 ) : 0;
+      var posX = self.options.horizontal ? ( dataPercentage || self.options.center ? (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0 ) : 0;
+
+      var blockTop = posY + el.getBoundingClientRect().top;
+      var blockHeight = el.clientHeight || el.offsetHeight || el.scrollHeight;
+
+      var blockLeft = posX + el.getBoundingClientRect().left;
+      var blockWidth = el.clientWidth || el.offsetWidth || el.scrollWidth;
+
+      // apparently parallax equation everyone uses
+      var percentageY = dataPercentage ? dataPercentage : (posY - blockTop + screenY) / (blockHeight + screenY);
+      var percentageX = dataPercentage ? dataPercentage : (posX - blockLeft + screenX) / (blockWidth + screenX);
+      if(self.options.center){ percentageX = 0.5; percentageY = 0.5; }
+
+      // Optional individual block speed as data attr, otherwise global speed
+      var speed = dataSpeed ? dataSpeed : self.options.speed;
+
+      var bases = updatePosition(percentageX, percentageY, speed);
+
+      // ~~Store non-translate3d transforms~~
+      // Store inline styles and extract transforms
+      var style = el.style.cssText;
+      var transform = '';
+
+      // Check if there's an inline styled transform
+      if (style.indexOf('transform') >= 0) {
+        // Get the index of the transform
+        var index = style.indexOf('transform');
+
+        // Trim the style to the transform point and get the following semi-colon index
+        var trimmedStyle = style.slice(index);
+        var delimiter = trimmedStyle.indexOf(';');
+
+        // Remove "transform" string and save the attribute
+        if (delimiter) {
+          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g,'');
+        } else {
+          transform = " " + trimmedStyle.slice(11).replace(/\s/g,'');
+        }
+      }
+
+      return {
+        baseX: bases.x,
+        baseY: bases.y,
+        top: blockTop,
+        left: blockLeft,
+        height: blockHeight,
+        width: blockWidth,
+        speed: speed,
+        style: style,
+        transform: transform,
+        zindex: dataZindex
+      };
+    };
+
+    // set scroll position (posY, posX)
+    // side effect method is not ideal, but okay for now
+    // returns true if the scroll changed, false if nothing happened
+    var setPosition = function() {
+      var oldY = posY;
+      var oldX = posX;
+
+      posY = self.options.wrapper ? self.options.wrapper.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset;
+      posX = self.options.wrapper ? self.options.wrapper.scrollLeft : (document.documentElement || document.body.parentNode || document.body).scrollLeft || window.pageXOffset;
+
+
+      if (oldY != posY && self.options.vertical) {
+        // scroll changed, return true
+        return true;
+      }
+
+      if (oldX != posX && self.options.horizontal) {
+        // scroll changed, return true
+        return true;
+      }
+
+      // scroll did not change
+      return false;
+    };
+
+    // Ahh a pure function, gets new transform value
+    // based on scrollPosition and speed
+    // Allow for decimal pixel values
+    var updatePosition = function(percentageX, percentageY, speed) {
+      var result = {};
+      var valueX = (speed * (100 * (1 - percentageX)));
+      var valueY = (speed * (100 * (1 - percentageY)));
+
+      result.x = self.options.round ? Math.round(valueX) : Math.round(valueX * 100) / 100;
+      result.y = self.options.round ? Math.round(valueY) : Math.round(valueY * 100) / 100;
+
+      return result;
+    };
+
+    // Loop
+    var update = function() {
+      if (setPosition() && pause === false) {
+        animate();
+      }
+
+      // loop again
+      loop(update);
+    };
+
+    // Transform3d on parallax element
+    var animate = function() {
+      var positions;
+      for (var i = 0; i < self.elems.length; i++){
+        var percentageY = ((posY - blocks[i].top + screenY) / (blocks[i].height + screenY));
+        var percentageX = ((posX - blocks[i].left + screenX) / (blocks[i].width + screenX));
+
+        // Subtracting initialize value, so element stays in same spot as HTML
+        positions = updatePosition(percentageX, percentageY, blocks[i].speed);// - blocks[i].baseX;
+        var positionY = positions.y - blocks[i].baseY;
+        var positionX = positions.x - blocks[i].baseX;
+
+        var zindex = blocks[i].zindex;
+
+        // Move that element
+        // (Set the new translation and append initial inline transforms.)
+        var translate = 'translate3d(' + (self.options.horizontal ? positionX : '0') + 'px,' + (self.options.vertical ? positionY : '0') + 'px,' + zindex + 'px) ' + blocks[i].transform;
+        self.elems[i].style[transformProp] = translate;
+      }
+      self.options.callback(positions);
+    };
+
+    self.destroy = function() {
+      for (var i = 0; i < self.elems.length; i++){
+        self.elems[i].style.cssText = blocks[i].style;
+      }
+
+      // Remove resize event listener if not pause, and pause
+      if (!pause) {
+        window.removeEventListener('resize', init);
+        pause = true;
+      }
+    };
+
+    // Init
+    init();
+
+    // Start the loop
+    update();
+
+    // Allow to recalculate the initial values whenever we want
+    self.refresh = init;
+
+    return self;
+  };
+  return Rellax;
+}));
+
+},{}],5:[function(require,module,exports){
 /*!
  * ScrollMagic v2.0.5 (2015-04-29)
  * The javascript library for magical scroll interactions.
@@ -21007,7 +21484,7 @@ return jQuery;
 
 	return ScrollMagic;
 }));
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*!
  * ScrollMagic v2.0.5 (2015-04-29)
  * The javascript library for magical scroll interactions.
@@ -21318,7 +21795,7 @@ return jQuery;
 
 	});
 }));
-},{"gsap":1,"scrollmagic":3}],5:[function(require,module,exports){
+},{"gsap":1,"scrollmagic":5}],7:[function(require,module,exports){
 'use strict';
 
 var attrRE = /([\w-]+)|['"]{1}([^'"]*)['"]{1}/g;
@@ -21525,7 +22002,7 @@ function Splitter(html, template, words) {
 
 module.exports = Splitter;
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21631,7 +22108,7 @@ var Gradient_letters = function () {
 exports.default = Gradient_letters;
 module.exports = exports['default'];
 
-},{"split-html-to-chars":5}],7:[function(require,module,exports){
+},{"split-html-to-chars":7}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21702,26 +22179,24 @@ var Sprite_animation = function () {
       var sprite_width = this.img_width / this.col * this.scale;
       var sprite_height = this.img_height / this.row * this.scale;
 
-      var go_animation = function go_animation() {
-        setTimeout(function () {
+      clearInterval(this.interval_animation_revers);
 
-          _this.sprite.style.transform = 'translate3D(' + -sprite_width * now_col + 'px, ' + -sprite_height * now_row + 'px, 0)';
+      this.interval_animation = setInterval(function () {
 
-          if (now_col === _this.col - 1) {
-            now_col = 0;
-            now_row++;
-          } else {
-            now_col++;
-          }
+        _this.sprite.style.transform = 'translate3D(' + -sprite_width * now_col + 'px, ' + -sprite_height * now_row + 'px, 0)';
 
-          counter++;
-          if (counter < iteration) {
-            go_animation();
-          }
-        }, _this.speed);
-      };
+        if (now_col === _this.col - 1) {
+          now_col = 0;
+          now_row++;
+        } else {
+          now_col++;
+        }
 
-      go_animation();
+        counter++;
+        if (counter === iteration) {
+          clearInterval(_this.interval_animation);
+        }
+      }, this.speed);
     }
   }, {
     key: 'animation_revers',
@@ -21735,26 +22210,23 @@ var Sprite_animation = function () {
       var sprite_width = this.img_width / this.col * this.scale;
       var sprite_height = this.img_height / this.row * this.scale;
 
-      var go_animation = function go_animation() {
-        setTimeout(function () {
+      clearInterval(this.interval_animation);
 
-          _this2.sprite.style.transform = 'translate3D(' + -sprite_width * now_col + 'px, ' + -sprite_height * now_row + 'px, 0)';
+      this.interval_animation_revers = setInterval(function () {
+        _this2.sprite.style.transform = 'translate3D(' + -sprite_width * now_col + 'px, ' + -sprite_height * now_row + 'px, 0)';
 
-          if (now_col === 0) {
-            now_col = _this2.col - 1;
-            now_row--;
-          } else {
-            now_col--;
-          }
+        if (now_col === 0) {
+          now_col = _this2.col - 1;
+          now_row--;
+        } else {
+          now_col--;
+        }
 
-          counter--;
-          if (counter > 0) {
-            go_animation();
-          }
-        }, _this2.speed);
-      };
-
-      go_animation();
+        counter--;
+        if (counter === 0) {
+          clearInterval(_this2.interval_animation_revers);
+        }
+      }, this.speed);
     }
   }, {
     key: 'init',
@@ -21770,7 +22242,7 @@ var Sprite_animation = function () {
 exports.default = Sprite_animation;
 module.exports = exports['default'];
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 var _scrollmagic = require('scrollmagic');
@@ -21779,34 +22251,44 @@ var _scrollmagic2 = _interopRequireDefault(_scrollmagic);
 
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap');
 
-var _gsap = require('gsap');
-
-var _gsap2 = _interopRequireDefault(_gsap);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _gsap = require('gsap');
+
+var _gsap2 = _interopRequireDefault(_gsap);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.addEventListener('load', function () {
-  var design_titles = document.querySelectorAll('.design_item__title');
-  // let tl = new TweenlineMax();
+  var design_items = document.querySelectorAll('.design_item');
+  // let tl = new TimelineMax();
 
   var controller = new _scrollmagic2.default.Controller();
 
   new _scrollmagic2.default.Scene().addTo(controller);
+
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = design_titles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var design_title = _step.value;
+    for (var _iterator = design_items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var design_item = _step.value;
 
-      var tween = _gsap2.default.staggerFromTo((0, _jquery2.default)(design_title).children(), 0.5, { y: -30, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
 
-      var scene = new _scrollmagic2.default.Scene({ triggerElement: design_title, duration: 0, offset: -300 }).setTween(tween).addTo(controller);
+      var title = (0, _jquery2.default)(design_item).children('.design_item__title'),
+          title_span = title.children(),
+          text = (0, _jquery2.default)(design_item).children('.design_item__text');
+
+      var tween_title = _gsap2.default.staggerFromTo((0, _jquery2.default)(title_span), 0.5, { y: -30, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
+
+      var tween_text = _gsap2.default.fromTo((0, _jquery2.default)(text), 0.5, { y: 30, opacity: 0 }, { y: 0, opacity: 1, delay: 0.5 });
+
+      var scene_1 = new _scrollmagic2.default.Scene({ triggerElement: design_item, duration: 0, offset: -300 }).setTween(tween_title).addTo(controller);
+
+      var scene_2 = new _scrollmagic2.default.Scene({ triggerElement: design_item, duration: 0, offset: -300 }).setTween(tween_text).addTo(controller);
     }
   } catch (err) {
     _didIteratorError = true;
@@ -21824,7 +22306,7 @@ window.addEventListener('load', function () {
   }
 });
 
-},{"gsap":1,"jquery":2,"scrollmagic":3,"scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap":4}],9:[function(require,module,exports){
+},{"gsap":1,"jquery":3,"scrollmagic":5,"scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap":6}],11:[function(require,module,exports){
 'use strict';
 
 var _animation_letter_var = require('./animation_letter_var');
@@ -21856,7 +22338,7 @@ window.addEventListener('load', function () {
   letter_animation('.card__letter-c', _animation_letter_var.animation.c);
 });
 
-},{"./animation_letter_var":10,"scrollmagic":3}],10:[function(require,module,exports){
+},{"./animation_letter_var":12,"scrollmagic":5}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21952,35 +22434,14 @@ var animation = {
 exports.selector = selector;
 exports.animation = animation;
 
-},{"./Sprite_animation":7}],11:[function(require,module,exports){
+},{"./Sprite_animation":9}],13:[function(require,module,exports){
 'use strict';
 
 var _Gradient = require('./Gradient');
 
 var _Gradient2 = _interopRequireDefault(_Gradient);
 
-var _Sprite_animation = require('./Sprite_animation');
-
-var _Sprite_animation2 = _interopRequireDefault(_Sprite_animation);
-
-require('./animation_letter');
-
-require('./animation_design_title');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var title_animation = document.querySelector('.hero__lookbook-desktop');
-
-var animation_lookbook = new _Sprite_animation2.default({
-  selector: '.hero__lookbook-desktop',
-  img: './images/sprite/sprite-lookbook.png',
-  img_width: 1614,
-  img_height: 16800,
-  col: 2,
-  row: 42,
-  scale: 1,
-  speed: 35
-});
 
 var gradient = {
   style: '.design_item-style .design_item__title',
@@ -21998,10 +22459,138 @@ new _Gradient2.default(gradient.comfort, '#F5BAB7', '#F094AF');
 new _Gradient2.default(gradient.support, '#D39B3F', '#D98150');
 new _Gradient2.default(gradient.refinement, '#FF3C46', '#EC325D');
 
+},{"./Gradient":8}],14:[function(require,module,exports){
+'use strict';
+
+var _Sprite_animation = require('./Sprite_animation');
+
+var _Sprite_animation2 = _interopRequireDefault(_Sprite_animation);
+
+var _make_letters_of_string = require('./make_letters_of_string');
+
+var _make_letters_of_string2 = _interopRequireDefault(_make_letters_of_string);
+
+var _rellax = require('rellax');
+
+var _rellax2 = _interopRequireDefault(_rellax);
+
+var _jquery = require('jquery.easing');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+require('./let_gradient');
+
+require('./animation_letter');
+
+require('./animation_design_title');
+
+var _jquery3 = require('jquery');
+
+var _jquery4 = _interopRequireDefault(_jquery3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var latestKnownScrollY = (0, _jquery4.default)('html').scrollTop() || (0, _jquery4.default)('body').scrollTop();
+
+(0, _jquery4.default)(window).on("scroll", function () {
+  latestKnownScrollY = (0, _jquery4.default)('html').scrollTop() || (0, _jquery4.default)('body').scrollTop();
+});
+(0, _jquery4.default)(window).on("mousewheel DOMMouseScroll", function (event) {
+  var scrollTo,
+      scrollDistance = 150,
+      delta;
+  if (event.type == 'mousewheel') {
+    delta = event.originalEvent.wheelDelta / 250;
+  } else if (event.type == 'DOMMouseScroll') {
+    delta = -event.originalEvent.detail / 5;
+  }
+  scrollTo = latestKnownScrollY - delta * scrollDistance;
+  if (scrollTo) {
+    event.preventDefault();
+    event.stopPropagation();
+    (0, _jquery4.default)('body,html').stop().animate({
+      scrollTop: scrollTo
+    }, {
+      duration: 800,
+      easing: 'easeOutCubic'
+    });
+  }
+});
+
+new _make_letters_of_string2.default('.card__button');
+
+var rellax = new _rellax2.default('.rellax', {
+  center: 5
+});
+
+var title_animation = document.querySelector('.hero__lookbook-desktop');
+
+var animation_lookbook = new _Sprite_animation2.default({
+  selector: '.hero__lookbook-desktop',
+  img: './images/sprite/sprite-lookbook.png',
+  img_width: 1614,
+  img_height: 16800,
+  col: 2,
+  row: 42,
+  scale: 1,
+  speed: 35
+});
+
 window.addEventListener('load', function () {
   animation_lookbook.animation();
 });
 
-},{"./Gradient":6,"./Sprite_animation":7,"./animation_design_title":8,"./animation_letter":9}]},{},[11])
+},{"./Sprite_animation":9,"./animation_design_title":10,"./animation_letter":11,"./let_gradient":13,"./make_letters_of_string":15,"jquery":3,"jquery.easing":2,"rellax":4}],15:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _splitHtmlToChars = require('split-html-to-chars');
+
+var _splitHtmlToChars2 = _interopRequireDefault(_splitHtmlToChars);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var make_letters_of_string = function () {
+  function make_letters_of_string(selector) {
+    _classCallCheck(this, make_letters_of_string);
+
+    this.selector = selector;
+    this.element = document.querySelectorAll(this.selector);
+
+    this.init();
+  }
+
+  _createClass(make_letters_of_string, [{
+    key: 'split_string',
+    value: function split_string() {
+      [].forEach.call(this.element, function (el) {
+        el.outerHTML = (0, _splitHtmlToChars2.default)(el.outerHTML, '<span class="letter">$</span>');
+      });
+    }
+  }, {
+    key: 'init',
+    value: function init() {
+      this.split_string();
+    }
+  }]);
+
+  return make_letters_of_string;
+}();
+
+exports.default = make_letters_of_string;
+module.exports = exports['default'];
+
+},{"jquery":3,"split-html-to-chars":7}]},{},[14])
 
 //# sourceMappingURL=main.js.map
