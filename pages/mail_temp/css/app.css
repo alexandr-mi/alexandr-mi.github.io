@@ -91,6 +91,17 @@ th.columns.last {
 th.columns table:not(.button) {
   width: 100%; }
 
+th.large-4 {
+  width: 200px;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+th.large-4.first {
+  padding-left: 0px; }
+
+th.large-4.last {
+  padding-right: 0px; }
+
 th.large-6 {
   width: 300px;
   padding-left: 0px;
@@ -203,9 +214,6 @@ span.preheader {
     box-sizing: border-box;
     padding-left: 0px !important;
     padding-right: 0px !important; }
-  th.small-6 {
-    display: inline-block !important;
-    width: 50% !important; }
   th.small-12 {
     display: inline-block !important;
     width: 100% !important; } }
@@ -217,9 +225,12 @@ h2 {
 .header .columns {
   padding-bottom: 0; }
 
-.header__logo_img {
-  width: 160px !important;
-  margin-left: 20px !important; }
+.header__logo p {
+  padding-top: 37px;
+  padding-bottom: 47px; }
+
+.header__logo_img img {
+  width: 160px !important; }
 
 .header__phone {
   padding: 0 !important; }
@@ -235,6 +246,8 @@ h2 {
   margin-right: 9px; }
 
 .header__phone_link {
+  padding-top: 49px;
+  padding-bottom: 47px;
   color: #322C48;
   margin-right: 20px;
   font-size: 18px; }
@@ -268,7 +281,7 @@ h2 {
   padding-bottom: 0 !important; }
 
 .service__icon {
-  display: inline;
+  display: inline-block;
   width: 80px;
   vertical-align: middle;
   margin-right: 10px; }
@@ -276,6 +289,47 @@ h2 {
 .service__text {
   font-size: 22px;
   letter-spacing: 1px; }
+
+.contact__text {
+  text-align: center;
+  font-size: 14px;
+  line-height: 35px; }
+
+.contact__text-title {
+  text-align: left; }
+
+.contact__icon, .contact__link {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 35px; }
+
+.contact__icon {
+  width: 15px !important;
+  margin-right: 9px;
+  margin-bottom: 2px;
+  vertical-align: middle; }
+
+.contact__link-messenger {
+  line-height: 60px; }
+
+.contact__icon-skype, .contact__icon-telegram {
+  margin-bottom: 0 !important;
+  width: 40px !important; }
+
+.contact__icon-wapp, .contact__icon-viber {
+  width: 40px !important; }
+
+.footer__text {
+  font-size: 16px; }
+
+.footer__link {
+  color: #13C0D7; }
+
+.footer__link:hover {
+  color: #008A9C; }
+
+.footer__link:visited {
+  color: #008A9C; }
 
 body,
 html,
@@ -295,12 +349,55 @@ html,
 .margin-r-20 {
   margin-right: 20px; }
 
+.margin-l-40 {
+  margin-left: 40px; }
+
+.margin-r-40 {
+  margin-right: 40px; }
+
+.spacer .columns {
+  padding-bottom: 0 !important; }
+
+p {
+  margin-bottom: 0; }
+
+hr {
+  color: #F1F0F2 !important;
+  border: none !important;
+  border-top: 1px solid #F1F0F2 !important; }
+
 @media only screen and (max-width: 600px) {
+  table.container {
+    width: 100% !important; }
   .width-560 {
-    width: 100% !important; } }
+    width: 100% !important; }
+  .header__logo p {
+    padding-top: 37px;
+    padding-bottom: 20px !important; }
+  .header__phone_link {
+    padding-top: 0px !important;
+    text-align: left !important;
+    margin-left: 20px !important; }
+  .header__phone th {
+    text-align: left !important; }
+  .contact__text {
+    text-align: left !important;
+    margin-left: 20px !important; }
+  .contact__messenger {
+    margin-left: 20px !important; }
+  .contact__icon-skype, .contact__icon-telegram {
+    width: 40px !important; }
+  .contact__icon-wapp, .contact__icon-viber {
+    width: 40px !important; } }
 
 @media only screen and (max-width: 430px) {
   .service__text {
     font-size: 16px !important; }
   .service__icon {
     width: 60px !important; } }
+
+@media only screen and (max-width: 380px) {
+  .service__text {
+    font-size: 14px !important; }
+  .service__icon {
+    width: 50px !important; } }
