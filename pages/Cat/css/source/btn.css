@@ -1,0 +1,21 @@
+.btn-paw {
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn-paw:hover svg {
+  transform: translateY(5%);
+}
+.btn-paw:hover:active svg {
+  transform: translateY(8%) scale(.95);
+}
+.btn-paw svg {
+  transform: translateY(30%);
+  transition: transform .3s;
+  max-width: 100%;
+  width: 205px;
+}
+
+.btn-paw--small {
+  width: 116px;
+  height: 116px;
+}
